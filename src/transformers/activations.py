@@ -54,7 +54,7 @@ class GELUActivation(nn.Module):
         return input * 0.5 * (1.0 + torch.erf(input / math.sqrt(2.0)))
 
     def forward(self, input: Tensor) -> Tensor:
-        return self.act(input)
+        return self.act(input, approximate='tanh')
 
 
 class FastGELUActivation(nn.Module):
